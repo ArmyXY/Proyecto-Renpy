@@ -5,6 +5,7 @@
 
 define a = Character("1")
 define b = Character("2")
+define z = Character("???")
 
 
 # The game starts here.
@@ -28,7 +29,28 @@ label start:
     #Variables aquí abajo.
     default clown = False
 
-    "Así empezo mi historia..." #No variable = pensamientos o el sistema...
+    #No variable = pensamientos o el sistema...
+
+    z "Así empezo tu historia..."
+    z "Pero antes dime..."
+    z "¿Cómo te describirias a ti mismo?"
+menu:
+    "Fuerte y Valiente":
+        $ trait = 1
+        jump start1
+    "Agil y Astuto":
+        $ trait = 2
+        jump start1
+
+label start1:
+    if trait == 1:
+        z "¿Así que valiente? Son los primeros en..."
+        "..."
+    else:
+        z "¿Agil? No me lo parecias..."
+        "..."
+
+    "Te despiertas abruptamente"
     a "¡Demonios mi cabeza!"
     "Algo te golpeo tan fuerte que te tiro al suelo"
     b "¡Menuda ostia te diste!"
