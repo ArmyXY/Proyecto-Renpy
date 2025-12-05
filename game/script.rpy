@@ -37,7 +37,7 @@ label start:
     b "No pasa nada, después de todo estamos encerrados..."
     "¡Mierda es verdad!"
     "Te colocas en posición defensiva"
-    default clown = False
+    $ clown = False
 
 menu:
     "¿Qué quieres de mi pervertido?":
@@ -71,7 +71,7 @@ label continue1:
 label continue2:
     "Debemos de observar nuestro entorno... ¿verdad?"
     "Esta el payaso, una cama, un hueco y una puerta cerrada..."
-    default closedd1 = True
+    $ closedd1 = True
 
 menu:
     "Payaso":
