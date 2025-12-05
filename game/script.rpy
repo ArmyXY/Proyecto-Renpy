@@ -25,24 +25,31 @@ label start:
 
     # These display lines of dialogue.
 
-    "Así empezo mi historia" #No variable = pensamientos o el sistema...
+    #Variables aquí abajo.
+    default clown = False
+
+    "Así empezo mi historia..." #No variable = pensamientos o el sistema...
     a "¡Demonios mi cabeza!"
     "Algo te golpeo tan fuerte que te tiro al suelo"
-    b "Vas ha seguir durmiendo o me pasas la botella"
-    a "¡Me golpeaste con una puta botella!"
-    b "Sip... estaba haciendo un video trendy..."
-    "Puto retrasado mental..."
+    b "¡Menuda ostia te diste!"
+    "El desconocido te ayuda"
+    a "Te lo agradezco..."
+    b "No pasa nada, después de todo estamos encerrados..."
+    "¡Mierda es verdad!"
+    "Te colocas en posición defensiva"
     default clown = False
+
 menu:
-    "¿Eres retrasado o te lo haces?":
+    "¿Qué quieres de mi pervertido?":
         jump angy
 
-    "Puto payaso...":
+    "Demonios... nunca pense que me salvaria un payaso...":
         jump clown
 
 label angy:
-    b "Te me relajas... el retardado eres tu"
-    a "Puto retardado..."
+    b "¡Yo no fui!"
+    a "Joder..."
+    a "Entonces... quien fue?"
     jump continue1
 
 label clown:
@@ -50,19 +57,54 @@ label clown:
     "¿Existe ese puto master?"
     $ clown = True
     jump continue1
+
 label continue1:
     if clown:
         a "¡De que cojones va esa mierda de master de payaso!"
         b "Bro... siempre quise ser payaso..."
-        "Ya lo eres puto retardado..."
+        "..."
         jump continue2
     else:
-        a "Aquí tienes tu botella puta rata..."
-        b "Lo agradezco puto quejica"
+        a "¿Y ahora que?"
+        b "La verdad es que no se..."
         jump continue2
 label continue2:
-    "Fin"
-    return
-    # This ends the game.
+    "Debemos de observar nuestro entorno... ¿verdad?"
+    "Esta el payaso, una cama, un hueco y una puerta cerrada..."
+    default closedd1 = True
 
+menu:
+    "Payaso":
+        jump payaso
+    "Cama":
+        jump cama
+    "Hueco en la pared":
+        jump hueco
+    "Puerta Cerrada":
+        jump doorc
+
+label payaso:
+    b "Hey!"
+    jump continue3
+
+label cama:
+    "La cama esta vacia..."
+    jump continue3
+
+label hueco:
+    "El hueco esta vacio..."
+    jump continue3
+
+label doorc:
+    if closedd1:
+        "La puerta esta cerrada..."
+        jump continue3
+    else:
+        "La puerta esta... abierta?"
+        jump continue3
+
+label continue3:
     return
+
+    # This ends the game.
+    #return
