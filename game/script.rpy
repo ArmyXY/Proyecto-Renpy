@@ -3,9 +3,9 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define a = Character("1")
-define b = Character("2")
-define z = Character("???")
+define a = Character("1", color = "#0028FF")
+define b = Character("2", color = "#FF00AE")
+define z = Character("???", color = "#8F8F8F")
 
 
 # The game starts here.
